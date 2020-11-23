@@ -10,15 +10,15 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # check if we can find sysroot
 if [ -z "$PKG_CONFIG_SYSROOT_DIR" ]
 then
-		echo ""
-      echo "Error: could not locate the systemroot."
-      echo ""
-      echo "Source the sdk environment. e.g"
-		echo "└─ ⟫ . /opt/fslc-x11/3.1/environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi"
-		exit
+	echo ""
+	echo "Error: could not locate the systemroot."
+	echo ""
+	echo "Source the sdk environment. e.g"
+	echo "└─ ⟫ . /opt/fslc-x11/3.1/environment-setup-cortexa9t2hf-neon-fslc-linux-gnueabi"
+	exit
 
 else
-      echo "sysroot detected:          ${PKG_CONFIG_SYSROOT_DIR}"
+	echo "sysroot detected:          ${PKG_CONFIG_SYSROOT_DIR}"
 fi
 
 # check if kernel folder exists
@@ -30,8 +30,8 @@ then
 	make ARCH=${OECORE_TARGET_ARCH} scripts #make silentoldconfig scripts
 else
 	echo
-   echo "Kernel src missing:        $PKG_CONFIG_SYSROOT_DIR/usr/src/kernel"
-   exit
+	echo "Kernel src missing:        $PKG_CONFIG_SYSROOT_DIR/usr/src/kernel"
+	exit
 fi
 
 #build the Hello Horus example
